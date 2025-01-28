@@ -2,12 +2,11 @@
  * @file anysort.h
  * @brief Declarations for anysort
  *
- * @author Brody Lee (blee20@georgefox.edu)
+ * @author Frozonovic
  */
 
 #ifndef ANYSORT_H
 #define ANYSORT_H
-
 
 #include <algorithm>
 #include <climits>
@@ -17,7 +16,6 @@
 #include <thread>
 #include <tuple>
 
-
 /**
  * @brief Generates a random number of threads to spin off
  *
@@ -25,14 +23,12 @@
  */
 size_t random_thread_count();
 
-
 /**
  * @brief Randomizes an array of values
  *
  * @return Filled array with size
  */
-std::tuple<long long*, size_t> randomized_array();
-
+std::tuple<long long *, size_t> randomized_array();
 
 /**
  * @brief Parallelized implementation of selection sort
@@ -41,7 +37,6 @@ std::tuple<long long*, size_t> randomized_array();
  * @param arr_size Size of the array of values
  */
 void par_selection_sort(long long *arr, size_t arr_size);
-
 
 /**
  * @brief Gets the local minimum value from a subset of the global array
@@ -53,7 +48,6 @@ void par_selection_sort(long long *arr, size_t arr_size);
  */
 void get_local_minima(const long long *arr, size_t start, size_t end, std::tuple<long long, size_t> &local);
 
-
 /**
  * @brief Globally sorts the local minima
  *
@@ -63,7 +57,6 @@ void get_local_minima(const long long *arr, size_t start, size_t end, std::tuple
  * @param thread_count Number of threads spun off
  */
 void global_sort(long long *arr, std::tuple<long long, size_t> *locals, size_t global_index, size_t thread_count);
-
 
 /**
  * @brief Takes two elements and switches their place in the array
